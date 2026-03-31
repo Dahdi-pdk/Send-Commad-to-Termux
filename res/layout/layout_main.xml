@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#111827">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Termux API Controller"
+        android:textSize="18sp"
+        android:textColor="#f9fafb"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/rg_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/rb_intent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Via Intent"
+            android:textColor="#d1d5db"/>
+
+        <RadioButton
+            android:id="@+id/rb_http"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Via HTTP"
+            android:textColor="#d1d5db"
+            android:layout_marginLeft="20dp"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_server_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL Server, cth: http://127.0.0.1:8765"
+        android:textColor="#f9fafb"
+        android:textColorHint="#6b7280"
+        android:background="#1f2937"
+        android:padding="8dp"
+        android:inputType="textUri"
+        android:visibility="gone"
+        android:layout_marginBottom="6dp"/>
+
+    <EditText
+        android:id="@+id/et_command"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan perintah bash..."
+        android:textColor="#f9fafb"
+        android:textColorHint="#6b7280"
+        android:background="#1f2937"
+        android:padding="8dp"
+        android:inputType="text"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btn_run"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Jalankan"
+            android:textColor="#ffffff"
+            android:background="#2563eb"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hapus"
+            android:textColor="#ffffff"
+            android:background="#374151"
+            android:layout_marginLeft="6dp"/>
+
+        <Button
+            android:id="@+id/btn_copy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salin"
+            android:textColor="#ffffff"
+            android:background="#065f46"
+            android:layout_marginLeft="6dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Output:"
+        android:textColor="#9ca3af"
+        android:textSize="12sp"
+        android:paddingBottom="4dp"/>
+
+    <ScrollView
+        android:id="@+id/scroll_output"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0f172a">
+
+        <TextView
+            android:id="@+id/tv_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#34d399"
+            android:textSize="13sp"
+            android:typeface="monospace"
+            android:padding="10dp"
+            android:text=""/>
+    </ScrollView>
+
+</LinearLayout>
